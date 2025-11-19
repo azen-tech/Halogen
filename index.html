@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGrow Bio-Fertilizers | Sustainable Agriculture Solutions</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#10B981', // Emerald green
+                        'secondary-blue': '#3B82F6', // Blue for tech/science
+                        'dark-bg': '#1F2937', // Dark gray/blue for contrast
+                        'light-bg': '#F9FAF8', // Off-white/light gray
+                        'soil-brown': '#7C3A14',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'grow-pulse': {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
+                            '50%': { transform: 'scale(1.1)', opacity: '1' },
+                        },
+                        'scroll-down': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(8px)' },
+                        },
+                    },
+                    animation: {
+                        'grow-pulse': 'grow-pulse 2s ease-in-out infinite',
+                        'scroll-down': 'scroll-down 1.5s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom CSS for a slight parallax/layered effect in the hero */
+        .hero-section {
+            background-color: #F9FAF8;
+            background-image: linear-gradient(180deg, #D1FAE5 0%, #F9FAF8 100%);
+        }
+        
+        /* Smooth scrolling for page navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Gradient overlay for text readability on images */
+        .card-overlay {
+            background: linear-gradient(180deg, rgba(31, 41, 55, 0.1) 0%, rgba(31, 41, 55, 0.8) 100%);
+        }
+
+        /* Staggered animation effect for process steps (using delay on utility classes) */
+        .process-step {
+            transition: transform 0.5s ease-out, box-shadow 0.3s ease-out;
+        }
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(16, 185, 129, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-dark-bg bg-light-bg">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold tracking-tight flex items-center text-primary-green">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.103a2.036 2.036 0 012.448 2.438L16.326 15l-3.2 3.2a1 1 0 01-1.414 0L8.28 14.86a1 1 0 01-.157-.202l-1.92-3.84a1 1 0 01-.225-.333L2 10V6a2 2 0 012-2h4a2 2 0 012 2v4l-.403.806a1 1 0 01-.21.21L9 12z"></path></svg>
+                    GreenGrow
+                </a>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#products" class="text-dark-bg hover:text-primary-green transition duration-300">Products</a>
+                    <a href="#process" class="text-dark-bg hover:text-primary-green transition duration-300">Our Process</a>
+                    <a href="#mission" class="text-dark-bg hover:text-primary-green transition duration-300">Mission</a>
+                    <a href="#contact" class="px-4 py-2 bg-primary-green text-white rounded-lg shadow-md hover:bg-emerald-600 transition duration-300">Contact Sales</a>
+                </nav>
+                
+                <!-- Mobile Menu Button (Hidden for brevity, but typical implementation uses JS) -->
+                <button class="md:hidden p-2 text-dark-bg focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section min-h-[80vh] flex items-center py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            
+            <!-- Text Content -->
+            <div class="md:w-1/2 lg:w-5/12 text-center md:text-left mb-10 md:mb-0 z-10">
+                <p class="text-primary-green font-semibold uppercase tracking-widest mb-2">Sustainable Agriculture Technology</p>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-dark-bg leading-tight">
+                    Nurturing <span class="text-primary-green">Tomorrow's Harvest</span> Today.
+                </h1>
+                <p class="mt-6 text-lg text-gray-600">
+                    We manufacture cutting-edge bio-fertilizers, harnessing microbial power to enhance soil health, boost crop yield, and champion ecological farming practices.
+                </p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="#products" class="px-8 py-3 bg-primary-green text-white font-semibold rounded-full shadow-lg shadow-primary-green/40 hover:bg-emerald-600 transition duration-300 transform hover:scale-105">
+                        Explore Products
+                    </a>
+                    <a href="#process" class="px-8 py-3 bg-white text-dark-bg border border-gray-300 font-semibold rounded-full hover:bg-light-bg transition duration-300 transform hover:scale-105">
+                        See Our Technology
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated Illustration (SVG) -->
+            <div class="md:w-1/2 lg:w-6/12 flex justify-center relative">
+                <svg viewBox="0 0 300 300" class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                    <!-- Soil (Brown base) -->
+                    <path fill="#7C3A14" d="M50 250 H250 C230 270, 70 270, 50 250 Z" class="opacity-80"></path>
+                    
+                    <!-- Seed/Root (Pulse Animation) -->
+                    <circle cx="150" cy="230" r="10" fill="#92400E" class="animate-grow-pulse"></circle>
+
+                    <!-- Growing Sprout (CSS animated to look like growing) -->
+                    <path id="sprout-stem" fill="none" stroke="#10B981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M150 230 V150" style="stroke-dasharray: 80; stroke-dashoffset: 80; animation: grow-stem 2s ease-out forwards 0.5s;"></path>
+                    
+                    <!-- Leaves -->
+                    <path id="sprout-leaf-left" fill="#059669" opacity="0" d="M150 150 L120 120 C100 130, 100 170, 120 180 Z" style="animation: fade-in 1s ease-out forwards 2s;"></path>
+                    <path id="sprout-leaf-right" fill="#059669" opacity="0" d="M150 150 L180 120 C200 130, 200 170, 180 180 Z" style="animation: fade-in 1s ease-out forwards 2.2s;"></path>
+
+                    <!-- Water/Nutrient Droplet (Looping Animation) -->
+                    <circle cx="200" cy="50" r="5" fill="#3B82F6" class="opacity-70" style="animation: droplet-fall 3s linear infinite 1s;"></circle>
+
+                </svg>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator Animation -->
+        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-primary-green">
+            <svg class="w-6 h-6 animate-scroll-down" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+    </section>
+
+    <!-- Custom CSS Keyframes for SVG animation -->
+    <script>
+        // Injecting the CSS keyframes needed for the SVG animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes grow-stem {
+                to { stroke-dashoffset: 0; }
+            }
+            @keyframes fade-in {
+                to { opacity: 1; }
+            }
+            @keyframes droplet-fall {
+                0% { transform: translateY(0); opacity: 0; }
+                10% { opacity: 1; }
+                90% { transform: translateY(180px); opacity: 1; }
+                100% { transform: translateY(180px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    
+    <!-- 2. Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-dark-bg">Our Bio-Fertilizer Range</h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">Microbial solutions for maximum crop efficiency and healthy soil regeneration.</p>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1: Azotobacter -->
+                <div class="bg-light-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-48 bg-secondary-blue/10 flex items-center justify-center">
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=Nitrogen+Fixer" alt="Azotobacter Illustration" class="w-full h-full object-cover opacity-70">
+                        <div class="absolute inset-0 card-overlay"></div>
+                        <h3 class="absolute bottom-4 left-4 text-3xl font-bold text-white">NitroFix Pro</h3>
+                    </div>
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-primary-green font-semibold mb-2">Nitrogen Booster</p>
+                        <p class="text-gray-700 text-sm">Contains active *Azotobacter* strains to fix atmospheric nitrogen directly into the soil, reducing the need for chemical fertilizers.</p>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 25% yield increase</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Soil friendly</li>
+                        </ul>
+                        <a href="#" class="mt-5 block text-center py-2 border border-primary-green text-primary-green rounded-full hover:bg-primary-green hover:text-white transition duration-300">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Phosphorus Solubilizer -->
+                <div class="bg-light-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-48 bg-primary-green/10 flex items-center justify-center">
+                        <img src="https://placehold.co/600x400/10B981/ffffff?text=Phosphate+Solution" alt="Phosphate Solubilizer Illustration" class="w-full h-full object-cover opacity-70">
+                        <div class="absolute inset-0 card-overlay"></div>
+                        <h3 class="absolute bottom-4 left-4 text-3xl font-bold text-white">Phos-Activate</h3>
+                    </div>
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-secondary-blue font-semibold mb-2">Phosphate Mobilizer</p>
+                        <p class="text-gray-700 text-sm">Utilizes Phosphate Solubilizing Bacteria (PSB) to convert insoluble soil phosphates into a form readily available for plant absorption.</p>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Enhanced root development</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Mineral efficiency</li>
+                        </ul>
+                        <a href="#" class="mt-5 block text-center py-2 border border-primary-green text-primary-green rounded-full hover:bg-primary-green hover:text-white transition duration-300">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Potash Mobilizer -->
+                <div class="bg-light-bg rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                    <div class="relative h-48 bg-soil-brown/10 flex items-center justify-center">
+                        <img src="https://placehold.co/600x400/7C3A14/ffffff?text=Potash+Booster" alt="Potash Mobilizer Illustration" class="w-full h-full object-cover opacity-70">
+                        <div class="absolute inset-0 card-overlay"></div>
+                        <h3 class="absolute bottom-4 left-4 text-3xl font-bold text-white">K-Rich Mobilizer</h3>
+                    </div>
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-soil-brown font-semibold mb-2">Potassium Enhancer</p>
+                        <p class="text-gray-700 text-sm">A specialized microbial consortium that mobilizes potash in the soil, improving plant resilience against stress, drought, and pests.</p>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Stress resistance</li>
+                            <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fruit quality improvement</li>
+                        </ul>
+                        <a href="#" class="mt-5 block text-center py-2 border border-primary-green text-primary-green rounded-full hover:bg-primary-green hover:text-white transition duration-300">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Manufacturing Process Section (Animated Flow) -->
+    <section id="process" class="py-20 bg-light-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-dark-bg">Our Controlled Manufacturing Process</h2>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">From lab to field, every batch ensures purity and maximum biological activity.</p>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="process-step bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500" style="animation: fadeInUp 0.5s ease-out forwards; opacity: 0; animation-delay: 0s;">
+                    <div class="p-4 bg-primary-green/10 rounded-full inline-block mb-4">
+                        <span class="text-2xl font-bold text-primary-green">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark-bg">Microbial Isolation</h3>
+                    <p class="text-gray-600 text-sm">Pure, high-potency strains are isolated and checked for genetic stability and bioactivity in our certified lab.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500" style="animation: fadeInUp 0.5s ease-out forwards; opacity: 0; animation-delay: 0.2s;">
+                    <div class="p-4 bg-primary-green/10 rounded-full inline-block mb-4">
+                        <span class="text-2xl font-bold text-primary-green">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark-bg">Large-Scale Fermentation</h3>
+                    <p class="text-gray-600 text-sm">Bacteria are cultured in sterile, state-of-the-art fermenters under strictly monitored temperature and nutrient conditions.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500" style="animation: fadeInUp 0.5s ease-out forwards; opacity: 0; animation-delay: 0.4s;">
+                    <div class="p-4 bg-primary-green/10 rounded-full inline-block mb-4">
+                        <span class="text-2xl font-bold text-primary-green">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark-bg">Carrier Formulation</h3>
+                    <p class="text-gray-600 text-sm">The concentrated culture is mixed with bio-degradable carriers (liquid or powder) to ensure maximum shelf life and field efficacy.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step bg-white p-6 rounded-xl shadow-lg border border-gray-100 transition-all duration-500" style="animation: fadeInUp 0.5s ease-out forwards; opacity: 0; animation-delay: 0.6s;">
+                    <div class="p-4 bg-primary-green/10 rounded-full inline-block mb-4">
+                        <span class="text-2xl font-bold text-primary-green">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-dark-bg">Quality Assurance & Dispatch</h3>
+                    <p class="text-gray-600 text-sm">Final product quality is verified (viability, purity, count) before sealed packaging and dispatch to the distribution network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Mission & Technology Section -->
+    <section id="mission" class="py-20 bg-dark-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Mission Content -->
+                <div class="text-center lg:text-left">
+                    <h2 class="text-4xl font-bold text-primary-green">Our Sustainable Mission</h2>
+                    <p class="mt-4 text-gray-300 text-lg">
+                        We believe that sustainable farming shouldn't compromise on productivity. Our commitment is to replace harmful chemicals with living microbial solutions, ensuring a greener planet and healthier food supply for generations.
+                    </p>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 w-6 h-6 text-primary-green mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold text-white">Ecological Focus</h4>
+                                <p class="text-gray-400 text-sm">Reducing carbon footprint through bio-based inputs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 w-6 h-6 text-primary-green mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.103a2.036 2.036 0 012.448 2.438L16.326 15l-3.2 3.2a1 1 0 01-1.414 0L8.28 14.86a1 1 0 01-.157-.202l-1.92-3.84a1 1 0 01-.225-.333L2 10V6a2 2 0 012-2h4a2 2 0 012 2v4l-.403.806a1 1 0 01-.21.21L9 12z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold text-white">Maximum Efficacy</h4>
+                                <p class="text-gray-400 text-sm">Guaranteed colony forming units (CFU) and purity in every batch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Mockup (Image Placeholder) -->
+                <div class="relative p-6 bg-secondary-blue/20 rounded-xl shadow-2xl shadow-secondary-blue/30 overflow-hidden transform hover:scale-[1.01] transition duration-500">
+                    <h3 class="text-3xl font-bold mb-4 text-white">R&D Lab Insight</h3>
+                    <img src="https://placehold.co/600x350/3B82F6/ffffff?text=Modern+Bioreactor+Facility" alt="Modern Bioreactor Facility" class="w-full rounded-lg opacity-80 transition duration-500 hover:opacity-100">
+                    <p class="mt-4 text-gray-300 text-sm">Our modern bioreactors allow for precise, automated fermentation, ensuring optimal conditions for microbial growth and consistency across all products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section (CTA) -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-light-bg p-10 rounded-xl shadow-lg border-t-4 border-primary-green">
+            <h2 class="text-4xl font-bold text-dark-bg">Ready to Grow Smarter?</h2>
+            <p class="mt-4 text-xl text-gray-600">Partner with GreenGrow to transition your farm to a highly productive, sustainable future.</p>
+            
+            <form class="mt-8 max-w-lg mx-auto space-y-4">
+                <input type="text" placeholder="Your Name or Company Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200" required>
+                <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200" required>
+                <textarea placeholder="Your Inquiry (e.g., Distributor request, Product question)" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200"></textarea>
+                <button type="submit" class="w-full px-8 py-3 bg-primary-green text-white font-semibold rounded-lg shadow-md hover:bg-emerald-600 transition duration-300 transform hover:scale-105">
+                    Request a Consultation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <div class="text-lg font-bold text-primary-green mb-4">GreenGrow Bio-Fertilizers</div>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#mission" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#contact" class="hover:text-white transition duration-300">Terms of Service</a>
+                <a href="mailto:sales@greengrow.com" class="hover:text-white transition duration-300">sales@greengrow.com</a>
+            </div>
+            <p class="mt-6 text-sm">&copy; 2025 GreenGrow Solutions. All rights reserved. | Nurturing the Future of Farming.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
