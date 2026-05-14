@@ -323,14 +323,50 @@
             <h2 class="text-4xl font-bold text-dark-bg">Ready to Grow Smarter?</h2>
             <p class="mt-4 text-xl text-gray-600">Partner with Halogen to transition your farm to a highly productive, sustainable future.</p>
             
-            <form class="mt-8 max-w-lg mx-auto space-y-4">
-                <input type="text" placeholder="Your Name or Company Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200" required>
-                <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200" required>
-                <textarea placeholder="Your Inquiry (e.g., Distributor request, Product question)" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200"></textarea>
-                <button type="submit" class="w-full px-8 py-3 bg-primary-green text-white font-semibold rounded-lg shadow-md hover:bg-emerald-600 transition duration-300 transform hover:scale-105">
+            <form id="contact-form" class="mt-8 max-w-lg mx-auto space-y-4">
+                <input type="text" id="name" name="name" placeholder="Your Name or Company Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200" required>
+                <textarea id= "message" name="name" placeholder="Your Inquiry (e.g., Distributor request, Product question)" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-green focus:border-primary-green transition duration-200"></textarea>
+                <button type="submit" id="submit-btn"  class="w-full px-8 py-3 bg-primary-green text-white font-semibold rounded-lg shadow-md hover:bg-emerald-600 transition duration-300 transform hover:scale-105">
                     Request a Consultation
                 </button>
+                <p id="response-msg" class="mt-4 text-sm font-medium hidden"></p>
             </form>
+            <script>
+            const contactForm = document.getElementById('contact-form');
+            const responseMsg = document.getElementById('response-msg');
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value,
+                };
+
+                try {
+                    const response = await fetch('/api/send', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData),
+                    });
+
+                    if (response.ok) {
+                        responseMsg.innerText = "Message sent successfully! We'll be in touch.";
+                        responseMsg.classList.remove('hidden', 'text-red-500');
+                        responseMsg.classList.add('text-primary-green');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Failed to send.');
+                    }
+                } catch (error) {
+                    responseMsg.innerText = "Something went wrong. Please try again.";
+                    responseMsg.classList.remove('hidden', 'text-primary-green');
+                    responseMsg.classList.add('text-red-500');
+                }
+            });
+            </script>
         </div>
     </section>
 
