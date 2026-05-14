@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     try {
       const data = await resend.emails.send({
         from: 'Halogen Web <onboarding@resend.dev>', // Update this after verifying your domain
-        to: ['halogentechnologyindia@gmail.com'],
+        to: ['akshat.jth@gmail.com'],
         subject: `New Inquiry from ${name}`,
         html: `
           <h3>New Website Inquiry</h3>
